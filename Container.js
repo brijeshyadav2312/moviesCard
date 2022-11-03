@@ -1,24 +1,24 @@
 import {ChatLeftFill, HeartFill, ShareFill } from 'react-bootstrap-icons';
-const Container = ({poster_name,poster_img,year,Director,duration,genre,description}) => {
+const Container = (props) => {
   return (
     <div className="card">
         <div className="left">
             <div className="Description">
                 <div className="About">
-                    <img src={poster_img} alt="#"/>
+                    <img src={props.poster_img} alt="#"/>
                     <div>
-                        <span className="name">{poster_name}</span>
+                        <span className="name">{props.poster_name}</span>
                         <span className="date">
-                            <span>{year},</span>
-                            <span>{Director}</span>
+                            <span>{props.year},</span>
+                            <span>{props.Director}</span>
                         </span>
                         <span className="genre">
-                            <span className="duration">{duration}</span>&emsp;
-                            <span>{genre}</span>
+                            <span className="duration">{props.duration}</span>&emsp;
+                            <span>{props.genre}</span>
                         </span>
                     </div>
                 </div>
-                <div className="description">{description}</div>
+                <div className="description">{props.description}</div>
             </div>
             <div className="share">
                 <ShareFill color='#7a7a7a' size={20} cursor="pointer"/>
@@ -26,7 +26,7 @@ const Container = ({poster_name,poster_img,year,Director,duration,genre,descript
                 <ChatLeftFill color='#7a7a7a' size={20} cursor="pointer"/>
             </div>
         </div>
-        <div className="background" style={{backgroundImage:`url(${poster_img})`}}></div>
+        <div className="background" style={{backgroundImage:`url(${props.poster_img})`}}></div>
     </div>
   )
 }
